@@ -13,7 +13,7 @@ class pixelit {
     this.hideFromImg();
     //range between 0 to 100
     this.scale =
-      config.scale && config.scale > 0 && config.scale <= 50
+      config.scale && config.scale > 0 && config.scale <= 150
         ? config.scale * 0.01
         : 8 * 0.01;
     this.palette = config.palette || [
@@ -108,7 +108,7 @@ class pixelit {
    * @param {int} scale set pixelate scale [0...50]
    */
   setScale(scale) {
-    this.scale = scale > 0 && scale <= 50 ? scale * 0.01 : 8 * 0.01;
+    this.scale = scale > 0 && scale <= 150 ? scale * 0.01 : 8 * 0.01;
     return this;
   }
 
@@ -220,8 +220,8 @@ class pixelit {
       scaledW = this.drawto.width * this.scale;
       scaledH = this.drawto.height * this.scale;
       //make it big enough to fit
-      tempCanvas.width = Math.max(scaledW, scaledH) + 50;
-      tempCanvas.height = Math.max(scaledW, scaledH) + 50;
+      tempCanvas.width = Math.max(scaledW, scaledH) + 150;
+      tempCanvas.height = Math.max(scaledW, scaledH) + 150;
     }
     // get the context
     const tempContext = tempCanvas.getContext("2d");
